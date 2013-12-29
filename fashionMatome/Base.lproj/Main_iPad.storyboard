@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3sw-kC-9CN">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller - Fashion-->
+        <scene sceneID="99F-EM-cYw">
+            <objects>
+                <tableViewController wantsFullScreenLayout="YES" id="cJk-ed-Npg" customClass="TableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5q7-yy-Jvt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="sf9-8z-BsV" customClass="TableViewCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sf9-8z-BsV" id="iK1-pc-tIR">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cJk-ed-Npg" id="d3b-yF-Obn"/>
+                            <outlet property="delegate" destination="cJk-ed-Npg" id="k9A-1x-Dd0"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="Fashion" id="dVB-ML-eP1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="2xx-3I-usB">
+                            <connections>
+                                <action selector="p_refresh:" destination="cJk-ed-Npg" id="Grt-zp-EdP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="DCZ-ke-udn" kind="push" identifier="PushToWebViewSegue" id="lcF-1J-nUq"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1GZ-HM-WK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="-125"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="J5u-Dn-b53">
+            <objects>
+                <viewController id="DCZ-ke-udn" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sX2-S8-ECS"/>
+                        <viewControllerLayoutGuide type="bottom" id="a7n-zN-H9F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R7c-1a-JHl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yyw-mD-qZw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Yyw-mD-qZw" firstAttribute="leading" secondItem="R7c-1a-JHl" secondAttribute="leading" id="EfJ-Xo-z7f"/>
+                            <constraint firstItem="Yyw-mD-qZw" firstAttribute="top" secondItem="R7c-1a-JHl" secondAttribute="top" id="Gnj-SA-LGc"/>
+                            <constraint firstAttribute="trailing" secondItem="Yyw-mD-qZw" secondAttribute="trailing" id="php-q7-Ue0"/>
+                            <constraint firstAttribute="bottom" secondItem="Yyw-mD-qZw" secondAttribute="bottom" id="riu-PQ-hij"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="rewind" id="WM7-g2-jc1">
+                            <color key="tintColor" red="0.51701030999999997" green="0.79738626950000002" blue="0.93176800270000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="goBackButton:" destination="DCZ-ke-udn" id="JE2-lK-g43"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="O0K-yb-O0O"/>
+                        <barButtonItem systemItem="fastForward" id="JeR-2V-3Jz">
+                            <color key="tintColor" red="0.51701030999999997" green="0.79738626950000002" blue="0.93176800270000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="goForwardButton:" destination="DCZ-ke-udn" id="mFc-My-g0h"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="cC8-aI-Soc"/>
+                        <barButtonItem systemItem="refresh" id="AWQ-T3-TMJ">
+                            <color key="tintColor" red="0.51701030999999997" green="0.79738626950000002" blue="0.93176800270000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="reloadButton:" destination="DCZ-ke-udn" id="ZjY-8L-KkD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="9tT-wl-0P5"/>
+                        <barButtonItem systemItem="stop" id="ZUI-pV-tAL">
+                            <color key="tintColor" red="0.51701030999999997" green="0.79738626950000002" blue="0.93176800270000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="stopButton:" destination="DCZ-ke-udn" id="jFG-0N-ekn"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="oe6-Gl-EJA"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="webView" destination="Yyw-mD-qZw" id="9dK-5V-Qru"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GHe-XN-W0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1404" y="-118"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AsB-h8-bcc">
+            <objects>
+                <navigationController id="3sw-kC-9CN" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fdP-Sf-lOb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.51701030999999997" green="0.79738626950000002" blue="0.93176800270000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cJk-ed-Npg" kind="relationship" relationship="rootViewController" id="x0g-st-jhW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="re5-qn-a9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="430" y="-125"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.51701030999999997" green="0.79738626950000002" blue="0.93176800270000004" alpha="1" colorSpace="calibratedRGB"/>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
